@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/homepage.css' %}" type="text/css" />
+{% endblock %}
+{% block title %}Home {% endblock %}
+{% block content %}
+<div class="row content">
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+      <div id="landing-header" class="text-center">
+     	<h1 class="text-center">Welcome to Movie Social Site!</h1>
+    		<a href="" class="btn btn-lg btn-success">Sigup</a>
+    		<a href="{% url 'auth_login' %}" class="btn btn-lg btn-success">Login</a>
+    		<a href="{% url 'movies:movies_list' %}" class="btn btn-lg btn-success">View Movies</a>
+    </div>
+</div>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-12 col-md-3 mb-2 text-center">
+      <img class="img-fluid  ml-4 mt-3 pt-3" src="https://image.tmdb.org/t/p/w400/7yhiMY91WTC8Ke4f4BgVQHr7vtc.jpg" />
+    </div>
+    <div class="col-12 col-md-9 text-center pl-5 mt-3 pt-3 text-white">
+      <h1>Movie Social <span>&raquo; MOVIES ALL DAY</span></h1>
+      <p class="text-justify lead pr-4">Movies social site is an outstanding community fill 
+      with movies lovers. Members of this website have the ability to keep track 
+      of their movies they have watched and movies they wish to watch in the future. Members can add movies to their movies catalogue under their profile section. Our site also  provide ways for lovers see and comment on movies that are currently playing in theaters around the United States. We also provide the capability for user to lead a overview of each movie along with the cover 
+      poster.We are here to make your movie dreams come to reality.</p>
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid address-content">
+    <div class="row">
+    <div class="col-12 col-md-3 text-center">
+      <img class="img-fluid pt-3 pb-3" src="https://image.tmdb.org/t/p/w400/jw3CFmGrfs4qUf3Aih9xgN5BTqu.jpg"/>
+    </div>
+    <div class="col-12 col-md-3 text-center">
+      <img class="img-fluid pt-3 pb-3" src="https://image.tmdb.org/t/p/w400/81RColr4rau6DZ7z9eMsksokcfk.jpg"/>
+    </div>
+    <div class="col-12 col-md-3 text-center">
+      <img class="img-fluid pt-3" src="https://image.tmdb.org/t/p/w400/nxn8m6LEmhRe55ZyAItBjQC78mR.jpg"/>
+    </div>
+    <div class="col-12 col-md-3 text-center">
+      <address class="text-white mt-3 pt-3">
+            <h3>Movie Social Site</h3>
+            1314 Lowry Ave NE.<br>
+            Minneapolis, MN, 55418 <br>
+            <a href="mailto:momo.johnson1987@gmail.com">moviesuperfan@gmail.com</a><br>
+            <abbr title="Phone">P:</abbr> 612-773-9876
+          </address>
+    </div>
+  </div>
+     <div class="container">
+      <div class="row">
+        <div class="col-12  mt-3 text-center text-white">
+          <h5><p>&copy; Movie Social Site Inc. 2018</p></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

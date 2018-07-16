@@ -1,0 +1,14 @@
+img{
+    max-height: 350px;
+}
+
+.container-fluid{
+  background-image: url('../images/purpalt.png');
+  width: 100vw;
+  height: 300px;
+}
+
+body{
+    overflow-x: hidden;
+    width: 100%;
+}

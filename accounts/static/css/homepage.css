@@ -1,0 +1,117 @@
+@media (max-width: 767.98px) {
+  #landing-header h1{
+    font-size: 25px;
+    
+  }
+  .col-12 h1{
+    font-size: 30px;
+    text-align: center !important;
+  }
+  .slideshow li { 
+  background-size: 100% 100%;
+  background-position: 50% 100%;
+  }
+
+}
+
+body{
+    background-color: black;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#landing-header {
+  z-index: 1;
+  left: 30%;
+  padding-top: 40vh;
+  position: absolute;
+  
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.slideshow { 
+  width: 100vw;
+  height: 650px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100vw;
+  height: 650px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url("https://image.tmdb.org/t/p/w500/2slvblTroiT1lY9bYLK7Amigo1k.jpg") 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url("https://image.tmdb.org/t/p/w500/awGdHLQdPARAWyiT4hzu1ZFdsHO.jpg");
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url("https://image.tmdb.org/t/p/w500/tt9YSQlArAj6849SQQJ5ryNgcJs.jpg");
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url("https://image.tmdb.org/t/p/w500/kQkx3WUH0ahWKYUJjkGpEOoK6Ep.jpg");
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url("https://image.tmdb.org/t/p/w500/aJODtXkQBK0lEmD4x5KkALnSiN1.jpg");
+  animation-delay: 40s; 
+}
+
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+.container-fluid{
+  background-image: url('../images/purpalt.png');
+  width: 100vw;
+}
+.address-content{
+  background-image: url('../images/shattered.png');
+  width: 100vw;
+}
+
+.text-white h1{
+  font-family: 'Abel', sans-serif;
+}
+
+.container .img-fluid{
+  max-height: 400px;
+  max-width: 500px;
+}
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
