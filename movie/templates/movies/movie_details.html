@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %} 
+<link rel="stylesheet" href="{% static 'css/movie.css' %}" type="text/css" />
+{% endblock %}
+{% block title %} {{movie.movie_title}} {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 mx-auto mt-3">
+        <div class="card">
+          <img class="card-img-top image-detail" src="{{movie.movie_poster_url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{movie.movie_title}}</h5>
+            <p class="card-text">{{movie.movie_overview}}</p>
+            {% if movie.movie_trailer_url %}
+            {{movie.movie_trailer_url}}
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".trailer-modal">Watch Trailer</button>
+          <div class="modal fade trailer-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{movie.movie_trailer_url}}" allowfullscreen></iframe>
+             </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="close text-white" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            </div>
+         
+          </div>
+          {% endif %}
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+  {% block scripts %}
+  <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+  {% endblock %}

@@ -29,7 +29,7 @@
               <div class="card-body">
                 <h5 class="card-title">{{movie.movie_title}}</h5>
                 <p class="card-text">{{movie.movie_overview|truncatechars:50}}</p>
-                <a href="#" class="btn btn-primary">View More...</a>
+                <a href="{% url 'movies:movie_details' movie.slug movie.id %}" class="btn btn-primary">View More...</a>
               </div>
             </div>
             </div>
