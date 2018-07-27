@@ -23,4 +23,5 @@ urlpatterns = [
     path('accounts/register/', views.UserRegistration.as_view(), name='registration_register'),
     path('accounts/', include('registration.backends.default.urls')),
     path('', include('movie.urls')),
+    path('movies/<slug:movie_slug>/<int:movie_id>/comments/', include('comments.urls'))
 ]

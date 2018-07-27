@@ -26,6 +26,7 @@ def list_of_movies_now_playing_urls():
         movies_playing_urls_list.append(url)
     return movies_playing_urls_list
     
+# Return a movie trailer if the movie has a trailer, otherwise return None   
 def get_movie_trailer(movie_id):
     trailer_url = 'http://api.themoviedb.org/3/movie/{}/videos?api_key={}'.format(movie_id, API_KEY)
     json_response = requests.get(trailer_url).json()
@@ -37,7 +38,7 @@ def get_movie_trailer(movie_id):
 
     return trailer_video_url
 
-# Retrieving data for movies that are now playing in theater in the USA
+# Retrieving movies data that are now playing in theater in USA and also contain poster and trailer url
 def movies_now_playing_data():
     movies_url = list_of_movies_now_playing_urls()
     for urls in movies_url:
@@ -48,7 +49,7 @@ def movies_now_playing_data():
             for i in range(len(movies_playing_json['results'])):
                 movie_poster_url = movies_playing_json['results'][i].get('poster_path')
                 movie_trailer_url = get_movie_trailer(movies_playing_json['results'][i].get('id'))
-            # json_response = requests.get(movie_trailer_url).json()
+                # Check if the movie has movie_poster_url and movie_trailer_url
                 if movie_poster_url and movie_trailer_url:
                     movie_title = movies_playing_json['results'][i].get('title')
                     movie_db_id  = movies_playing_json['results'][i].get('id')
